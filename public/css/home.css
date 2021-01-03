@@ -1,0 +1,32 @@
+section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2em;
+    padding: 2em;
+    overflow: paged-y-controls;
+    //todo hide scrollbar
+}
+
+section>div {
+    color: #FFFFFF;
+    background: #38383C 0 0 no-repeat padding-box;
+    border-radius: 13px;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+section>div>h2 {
+    text-align: center;
+}
+section>div>.info {
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 75ch;
+}
+section>div>.last_opened {
+    text-align: right;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
