@@ -4,10 +4,18 @@ section {
     grid-gap: 2em;
     padding: 2em;
     overflow: paged-y-controls;
-    //todo hide scrollbar
+//todo hide scrollbar
 }
-.home-top{
+.base_top {
+    display: flex;
+    justify-content: space-around;
     padding-top: 3em;
+}
+.base_top>button {
+    position: center;
+    height: 30%;
+    justify-content: center;
+    font:  normal normal normal 20px/30px Segoe UI;
 }
 section>div {
     color: #FFFFFF;
@@ -26,6 +34,7 @@ section>div>.info {
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 75ch;
+    padding: 0 1em;
 }
 section>div>.last_opened {
     text-align: right;
