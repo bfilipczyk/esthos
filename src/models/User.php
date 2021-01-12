@@ -5,7 +5,7 @@ class User
 {
     private $email;
     private $password;
-    private $mail;
+    private $name;
     private $surname;
 
     /**
@@ -15,11 +15,11 @@ class User
      * @param $mail
      * @param $surname
      */
-    public function __construct($email, $password, $mail, $surname)
+    public function __construct($email, $password, $name, $surname)
     {
         $this->email = $email;
         $this->password = $password;
-        $this->mail = $mail;
+        $this->name = $name;
         $this->surname = $surname;
     }
 

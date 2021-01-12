@@ -6,7 +6,7 @@ class DefaultController extends AppController {
 
 
     public function home() {
-        $this->render('home');
+        $this->render('home',['messages' => ['test']]);
     }
 
     public function characters() {

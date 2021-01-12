@@ -13,7 +13,7 @@
                 <div class="messages">
                     <?php if(isset($messages)) {
                         foreach ($messages as $message) {
-                            echo $message;
+                            echo "<p style='color: #D1BFBF;text-align: center ' >".$message."</p>";
                         }
                     }
                     ?>
