@@ -2,18 +2,18 @@
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/base_page.css">
-    <title> ITEMS PAGE </title>
+    <title> SCENARIOS PAGE </title>
 </head>
 <body>
 <div class="base_container">
     <main>
         <div class="base_top">
             <header>
-                Items
+                Scenarios
             </header>
-            <button> Add Item</button>
+            <button> Add Scenario</button>
         </div>
-        <section class="base)_main">
+        <section class="base_main">
             <div>
                 <h2> Name </h2>
                 <p class="info"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -98,22 +98,22 @@
         <img src="public/img/logo.png" alt="logo">
         <ul>
             <li>
-                <a href="home.html" class="button">Home</a>
+                <a href="home.php" class="button">Home</a>
             </li>
             <li>
-                <a href="characters.html" class="button">Characters</a>
+                <a href="characters.php" class="button">Characters</a>
             </li>
             <li>
-                <a href="places.html" class="button">Places</a>
+                <a href="places.php" class="button">Places</a>
             </li>
             <li>
-                <a href="items.html" class="button">Items</a>
+                <a href="items.php" class="button">Items</a>
             </li>
             <li>
-                <a href="events.html" class="button">Events</a>
+                <a href="events.php" class="button">Events</a>
             </li>
             <li>
-                <a href="scenarios.html" class="button">Scenarios</a>
+                <a href="scenarios.php" class="button">Scenarios</a>
             </li>
             <li>
                 <form>

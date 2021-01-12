@@ -97,22 +97,22 @@
             <img src="public/img/logo.png" alt="logo">
             <ul>
                 <li>
-                    <a href="home.html" class="button">Home</a>
+                    <a href=""  class="button">Home</a>
                 </li>
                 <li>
-                    <a href="characters.html" class="button">Characters</a>
+                    <a href="" class="button">Characters</a>
                 </li>
                 <li>
-                    <a href="places.html" class="button">Places</a>
+                    <a href="" class="button">Places</a>
                 </li>
                 <li>
-                    <a href="items.html" class="button">Items</a>
+                    <a href="" class="button">Items</a>
                 </li>
                 <li>
-                    <a href="events.html" class="button">Events</a>
+                    <a href="" class="button">Events</a>
                 </li>
                 <li>
-                    <a href="scenarios.html" class="button">Scenarios</a>
+                    <a href="" class="button">Scenarios</a>
                 </li>
                 <li>
                     <form>
