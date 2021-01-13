@@ -5,22 +5,16 @@ class User
 {
     private $email;
     private $password;
-    private $name;
-    private $surname;
 
     /**
      * User constructor.
      * @param $email
      * @param $password
-     * @param $mail
-     * @param $surname
      */
-    public function __construct($email, $password, $name, $surname)
+    public function __construct($email, $password)
     {
         $this->email = $email;
         $this->password = $password;
-        $this->name = $name;
-        $this->surname = $surname;
     }
 
     /**
@@ -53,38 +47,6 @@ class User
     public function setPassword($password)
     {
         $this->password = $password;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getMail()
-    {
-        return $this->mail;
-    }
-
-    /**
-     * @param mixed $mail
-     */
-    public function setMail($mail)
-    {
-        $this->mail = $mail;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getSurname()
-    {
-        return $this->surname;
-    }
-
-    /**
-     * @param mixed $surname
-     */
-    public function setSurname($surname)
-    {
-        $this->surname = $surname;
     }
 
 

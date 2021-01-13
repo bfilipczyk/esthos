@@ -41,18 +41,8 @@ form.login {
 form.login>div {
     color: #D1BFBF;
 }
-.login-input {
-    box-sizing: border-box;
-    color: #D1BFBF;
-    width: 80%;
-    margin: 1em;
-    padding: 1em;
-    border: none;
-    background-color: transparent;
-    opacity: 1;
-    border-bottom: 1px solid #707070;
 
-}
+
 
 button {
     color: #D1BFBF;
@@ -155,4 +145,22 @@ header {
     color: #D1BFBF;
 
 }
-.reel-grid
+
+.no-valid {
+    border: 3px solid red !important;
+    border-radius: 1em !important;
+    box-shadow: 0 0 0.2em red !important;
+    outline: none !important;
+}
+.login-input {
+    box-sizing: border-box;
+    color: #D1BFBF;
+    width: 80%;
+    margin: 1em;
+    padding: 1em;
+    border: none;
+    background-color: transparent;
+    opacity: 1;
+    border-bottom: 1px solid #707070;
+
+}
