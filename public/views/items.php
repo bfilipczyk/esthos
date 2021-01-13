@@ -2,18 +2,19 @@
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/base_page.css">
+    <script type="text/javascript" src="public/js/sidebar.js" defer></script>
     <title> ITEMS PAGE </title>
 </head>
 <body>
 <div class="base_container">
-    <main>
+    <main id="main">
         <div class="base_top">
             <header>
                 Items
             </header>
             <button> Add Item</button>
         </div>
-        <section class="base)_main">
+        <section id="base_main" class="base_main">
             <div>
                 <h2> Name </h2>
                 <p class="info"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor

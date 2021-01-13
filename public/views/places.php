@@ -2,18 +2,19 @@
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/base_page.css">
+    <script type="text/javascript" src="public/js/sidebar.js" defer></script>
     <title> PLACES PAGE </title>
 </head>
 <body>
 <div class="base_container">
-    <main>
+    <main id="main">
         <div class="base_top">
             <header>
                 Places
             </header>
             <button> Add Place</button>
         </div>
-        <section class="base_main">
+        <section id="base_main" class="base_main">
             <div>
                 <h2> Name </h2>
                 <p class="info"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor

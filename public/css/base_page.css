@@ -1,10 +1,29 @@
+
+main {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: auto;
+}
+
 section {
+    width: 90%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr;
     grid-gap: 2em;
     padding: 2em;
-    overflow: paged-y-controls;
-//todo hide scrollbar
+    overflow: visible;
+
+}
+
+main {
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+}
+main::-webkit-scrollbar{
+    width: 0 !important;
+    display: none;
 }
 .base_top {
     display: flex;
@@ -40,4 +59,49 @@ section>div>.last_opened {
     text-align: right;
     margin-right: 1em;
     margin-bottom: 1em;
+}
+
+.navi {
+    width: 20vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background: #363537FA 0 0 no-repeat padding-box;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+}
+
+.navi img{
+    width: 60%;
+    margin: 2em auto;
+}
+
+.nav_open {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    top: 50%;
+    right: 0;
+
+}
+.navi>button {
+    position: center;
+    height: 30%;
+    justify-content: center;
+    font:  normal normal normal 20px/30px Segoe UI;
+}
+
+@media only screen and (max-device-width: 420px) {
+    section {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .navi {
+        width: 80%;
+
+    }
+
 }
