@@ -7,13 +7,14 @@ main {
     overflow: auto;
 }
 
-section {
+section.base_main {
     width: 90%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 2em;
     padding: 2em;
     overflow: visible;
+
 
 }
 
@@ -36,7 +37,7 @@ main::-webkit-scrollbar{
     justify-content: center;
     font:  normal normal normal 20px/30px Segoe UI;
 }
-section>div {
+section.base_main>div {
     color: #FFFFFF;
     background: #38383C 0 0 no-repeat padding-box;
     border-radius: 13px;
@@ -44,19 +45,24 @@ section>div {
     display: flex;
     flex-direction: column;
     overflow: auto;
+    justify-content: space-around;
 }
-section>div>h2 {
+.note{
+    height: 30vh;
+}
+section.base_main>div>h2 {
     text-align: center;
 }
-section>div>.info {
+section.base_main>div>.info {
     text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 75ch;
     padding: 0 1em;
 }
-section>div>.last_opened {
+section.base_main>div>.last_opened {
     text-align: right;
+    position: relative;
     margin-right: 1em;
     margin-bottom: 1em;
 }
@@ -73,6 +79,7 @@ section>div>.last_opened {
     display: flex;
     flex-direction: column;
     justify-items: flex-start;
+    justify-content: center;
 }
 
 .navi img{
@@ -96,7 +103,7 @@ section>div>.last_opened {
 }
 
 @media only screen and (max-device-width: 420px) {
-    section {
+    section.base_main {
         grid-template-columns: repeat(1, 1fr);
     }
     .navi {

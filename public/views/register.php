@@ -10,7 +10,7 @@
             <img src="public/img/logo.png" alt="logo" >
         </div>
         <div class="login-container">
-            <form class="login" action="login" method="post">
+            <form class="login" action="register" method="POST">
                 <div class="messages">
                     <?php if(isset($messages)) {
                         foreach ($messages as $message) {

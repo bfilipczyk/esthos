@@ -5,7 +5,7 @@
     <img src="public/img/logo.png" alt="logo">
 
     <ul>
-        <li>
+        <li class="close_sidebar">
             <button class="nav_close" onclick="closeNav()">Hide menu &#62;</button>
         </li>
         <li>

@@ -1,0 +1,42 @@
+.note_main{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    grid-gap: 2em;
+    padding: 2em;
+    overflow: visible;
+}
+.note_edit {
+    text-align: center;
+    width: 60vw;
+    color: #FFFFFF;
+    background: #38383C 0 0 no-repeat padding-box;
+    border-radius: 13px;
+    padding: 1em;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    justify-content: space-around;
+    margin-left: 5vw;
+
+}
+.form.note_form {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 45%;
+    height: 30vh;
+
+    background: #2C2929FA 0 0 no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 20px;
+    opacity: 1;
+
+}
+.t-header {
+justify-content: center;
+}

@@ -9,7 +9,7 @@
             <img src="public/img/logo.png" alt="logo" >
         </div>
         <div class="login-container">
-            <form class="login" action="login" method="post">
+            <form class="login" action="login" method="POST">
                 <div class="messages">
                     <?php if(isset($messages)) {
                         foreach ($messages as $message) {
@@ -25,6 +25,7 @@
                     <input class="login-input" name="password" type="password" placeholder="password">
                 </label>
                 <button type="submit">LOGIN</button>
+                <a href="/../register"  class="button">Register</a>
             </form>
         </div>
     </div>

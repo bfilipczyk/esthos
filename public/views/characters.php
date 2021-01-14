@@ -94,6 +94,7 @@
 
 
         </section>
+
     </main>
     <?php
     include 'sidebar.php'

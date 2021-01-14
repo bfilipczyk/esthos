@@ -9,6 +9,10 @@ class DefaultController extends AppController {
         $this->render('home',['messages' => ['test']]);
     }
 
+    public function notes() {
+        $this->render('notes');
+    }
+
     public function characters() {
         $this->render('characters');
     }
