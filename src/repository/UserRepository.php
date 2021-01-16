@@ -20,9 +20,9 @@ class UserRepository extends Repository
         }
 
         return new User(
-            $user['id'],
             $user['email'],
-            $user['password']
+            $user['password'],
+            $user['id']
         );
     }
 

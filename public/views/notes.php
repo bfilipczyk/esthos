@@ -19,14 +19,15 @@
         <section id="note_main" class="note_main">
             <div id="note_edit" class="note_edit">
                 <form class="note_form" method="post" action="notes">
-                    <h2 class="t-header" contenteditable="true" style="position: relative;">
-                        The latest and greatest from TinyMCE
+                    <h2 class="t-header" name="title" contenteditable="true" style="position: relative;">
+                            <?= $note->getTitle() ?>
                     </h2>
-                    <div class="t-body" contenteditable="true" style="position: relative;">
+                    <div class="t-body" name='content' contenteditable="true" style="position: relative;">
                         <p>
-                            Hello there
+                            <?= $note->getContent() ?>
                         </p>
                     </div>
+                    <button type="submit" >SAVE</button>
 
 
                 </form>
@@ -37,3 +38,5 @@
     include 'sidebar.php'
     ?>
 </div>
+
+

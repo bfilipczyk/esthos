@@ -6,17 +6,17 @@ class Note
     private $id;
     private $user_id;
     private $title;
-    private $type;
+    private $note_type;
     private $content;
     private $last_open;
 
 
-    public function __construct($id = null, $user_id, $title, $type, $content, $last_open)
+    public function __construct($user_id, $title, $note_type, $content, $last_open, $id = null)
     {
         $this->id = $id;
         $this->user_id = $user_id;
         $this->title = $title;
-        $this->type = $type;
+        $this->note_type = $note_type;
         $this->content = $content;
         $this->last_open = $last_open;
     }
@@ -51,15 +51,17 @@ class Note
         $this->title = $title;
     }
 
-    public function getType()
+    public function getNoteType()
     {
-        return $this->type;
+        return $this->note_type;
     }
 
-    public function setType($type): void
+    public function setNoteType($note_type): void
     {
-        $this->type = $type;
+        $this->note_type = $note_type;
     }
+
+
 
     public function getContent()
     {

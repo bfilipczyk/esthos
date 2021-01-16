@@ -5,14 +5,12 @@ var tHeaderConfig = {
     content_css: 'dark',
     inline: true,
     toolbar: false,
-    plugins: [ 'quickbars' ],
-    quickbars_insert_toolbar: 'undo redo',
-    quickbars_selection_toolbar: 'italic underline',
 };
 
 var tBodyConfig = {
     selector: '.t-body',
     menubar: false,
+    skin: 'oxide-dark',
     inline: true,
     plugins: [
         'autolink',
