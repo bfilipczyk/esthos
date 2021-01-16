@@ -24,14 +24,13 @@ class DefaultController extends AppController {
         if(!$this->isPost()) {
             return $this->render('notes', ['note' => $note]);
         }
-        echo $_POST['title'];
         $note->setTitle($_POST['title']);
         $note->setContent($_POST['content']);
         $note->setLastOpen(Date("Y-m-d"));
-        //$this->notesRepository->updateNote($note);
+        $this->notesRepository->updateNote($note);
 
-        //$url = "http://$_SERVER[HTTP_HOST]";
-        //header("Location: {$url}/home");
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/home");
 
 
     }

@@ -1,17 +1,17 @@
+
 var tHeaderConfig = {
     selector: '.t-header',
     menubar: false,
     skin: 'oxide-dark',
     content_css: 'dark',
-    inline: true,
-    toolbar: false,
+    toolbar: false
 };
 
 var tBodyConfig = {
     selector: '.t-body',
     menubar: false,
     skin: 'oxide-dark',
-    inline: true,
+    content_css: 'dark',
     plugins: [
         'autolink',
         'codesample',
@@ -23,7 +23,6 @@ var tBodyConfig = {
         'help'
     ],
     toolbar: false,
-    quickbars_insert_toolbar: 'quicktable image media codesample',
     quickbars_selection_toolbar: 'bold italic underline | formatselect | blockquote quicklink',
     contextmenu: 'undo redo | inserttable | cell row column deletetable | help',
     powerpaste_word_import: 'clean',
@@ -32,3 +31,15 @@ var tBodyConfig = {
 
 tinymce.init(tHeaderConfig);
 tinymce.init(tBodyConfig);
+
+document.getElementById('save').onclick = function ()
+{
+    tinymce.triggerSave();
+    $.ajax({
+        type:"POST",
+        url: "/notes",
+        data: {'title': tinymce.editors[0].getContent(), 'content': tinymce.editors[0].getContent()}
+    });
+
+}
+
