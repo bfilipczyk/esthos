@@ -22,7 +22,7 @@ class SecurityController extends AppController
 
 
         $email = $_POST['email'];
-        $password = md5($_POST['password']);
+        $password = hash('sha512', $_POST['password']);
 
         $user = $this->userRepository->getUser($email);
 
@@ -31,13 +31,12 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ['User doesnt exist']]);
         }
 
-        if ($user->getEmail() !== $email) {
-            return $this->render('login', ['messages' => ['User with this email doesnt exist']]);
-        }
-
         if ($user->getPassword() !== $password) {
             return $this->render('login', ['messages' => ['Wrong password']]);
         }
+
+        setcookie("user",$user->getId(),time()+86400,"/");
+        setcookie("user_check",$password,time()+86400,"/");
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/home");
@@ -55,7 +54,7 @@ class SecurityController extends AppController
         if ($password !== $confirmedPassword) {
             return $this->render('register', ['messages' => ['Please provide proper password']]);
         }
-        $user = new User($email, md5($password));
+        $user = new User($email, hash('sha512',$password));
 
         $this->userRepository->addUser($user);
 

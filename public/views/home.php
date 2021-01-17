@@ -144,3 +144,7 @@
         ?>
     </div>
 </body>
+
+<?php
+include 'note-template.php'
+?>

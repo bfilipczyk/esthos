@@ -3,15 +3,18 @@
 require_once 'AppController.php';
 require_once __DIR__.'/../models/Note.php';
 require_once __DIR__.'/../repository/NotesRepository.php';
+require_once __DIR__.'/../repository/UserRepository.php';
 
 class DefaultController extends AppController {
 
     private $notesRepository;
+    private $userRepository;
 
     public function __construct()
     {
         parent::__construct();
         $this->notesRepository = new NotesRepository();
+        $this->userRepository = new UserRepository();
     }
 
     public function home() {
@@ -36,24 +39,43 @@ class DefaultController extends AppController {
     }
 
     public function characters() {
-        $notes = $this->notesRepository->getNotesByType("characters",7);
+        $this->checkAuthentication();
+        $notes = $this->notesRepository->getNotesByType("characters",$_COOKIE['user']);
         $this->render('characters', ['notes' => $notes]);
     }
 
     public function events() {
-        $this->render('events');
+        $this->checkAuthentication();
+        $notes = $this->notesRepository->getNotesByType("events",$_COOKIE['user']);
+        $this->render('events', ['notes' => $notes]);
     }
 
     public function items() {
-        $this->render('items');
+        $this->checkAuthentication();
+        $notes = $this->notesRepository->getNotesByType("items",$_COOKIE['user']);
+        $this->render('items', ['notes' => $notes]);
     }
 
     public function places() {
-        $this->render('places');
+        $this->checkAuthentication();
+        $notes = $this->notesRepository->getNotesByType("places",$_COOKIE['user']);
+        $this->render('places', ['notes' => $notes]);
     }
 
     public function scenarios() {
-        $this->render('scenarios');
+        $this->checkAuthentication();
+        $notes = $this->notesRepository->getNotesByType("scenarios",$_COOKIE['user']);
+        $this->render('scenarios', ['notes' => $notes]);
+    }
+
+    private function checkAuthentication() {
+        if(isset($_COOKIE['user']) and isset($_COOKIE['user_check']))
+        {
+            $user = $this->userRepository->getUserById($_COOKIE['user']);
+            if($user->getPassword() === $_COOKIE['user_check']) {
+                return null;
+            }
+        }
     }
 
 

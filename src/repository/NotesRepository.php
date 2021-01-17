@@ -34,7 +34,7 @@ class NotesRepository extends Repository
     public function getNoteById(int $id): ?Note
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM notes WHERE id=?;
+            SELECT * FROM notes WHERE id=? GROUP BY title;
         ');
         $stmt->execute([
             $id
