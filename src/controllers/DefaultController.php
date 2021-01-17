@@ -18,18 +18,20 @@ class DefaultController extends AppController {
     }
 
     public function home() {
-        $this->render('home',['messages' => ['test']]);
+        $this->checkAuthentication();
+        $notes = $this->notesRepository->getNotes($_COOKIE['user']);
+        $this->render('home', ['notes' => $notes]);
     }
 
     public function notes() {
 
-        $note = $this->notesRepository->getNoteById(1);
+        $note = $this->notesRepository->getNote(3);
         if(!$this->isPost()) {
             return $this->render('notes', ['note' => $note]);
         }
         $note->setTitle($_POST['title']);
         $note->setContent($_POST['content']);
-        $note->setLastOpen(Date("Y-m-d"));
+        $note->setLastOpen(Date('Y-m-d H:i:s'));
         $this->notesRepository->updateNote($note);
 
         $url = "http://$_SERVER[HTTP_HOST]";
