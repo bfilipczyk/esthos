@@ -1,18 +1,20 @@
 const divs = document.querySelectorAll(".note_div");
 
-document.getElementById("create").onclick = function () {
+if(document.getElementById('create')) {
+    document.getElementById("create").addEventListener("click", function () {
 
 
-    fetch("/add", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'text/xml'
-            },
-            body: window.location.pathname
-        }
-    );
+        fetch("/add", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'text/xml'
+                },
+                body: window.location.pathname
+            }
+        );
 
-    window.location.replace(window.location.origin+'/notes');
+        window.location.replace(window.location.origin + '/notes');
+    })
 }
 
 

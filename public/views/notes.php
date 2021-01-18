@@ -32,6 +32,7 @@
                         </p>
                     </textarea>
                     <button id="save">Save</button>
+                    <button id="delete note">Delete</button>
 
 
                 </form>

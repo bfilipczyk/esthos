@@ -20,6 +20,13 @@ class NotesRepository extends Repository
         ]);
     }
 
+    public function removeNote(int $id){
+        $stmt = $this->database->connect()->prepare(
+            'DELETE FROM notes WHERE id=?;
+        ');
+        $stmt->execute([$id]);
+    }
+
     public function updateNote(Note $note)
     {
         $stmt = $this->database->connect()->prepare(

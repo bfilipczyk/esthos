@@ -34,13 +34,14 @@ class DefaultController extends AppController {
             return $this->render('notes', ['note' => $note]);
         }
         $note->setTitle($_POST['title']);
-        $note->setContent($_POST['content']);
+        $note->setContent($_POST['delete']);
         $note->setLastOpen(Date('Y-m-d H:i:s'));
 
         $this->notesRepository->updateNote($note);
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/home");
+
 
 
     }
@@ -106,6 +107,12 @@ class DefaultController extends AppController {
         }
 
     }
+    public function remove()
+    {
+        $this->checkAuthentication();
+        $this->notesRepository->removeNote($_COOKIE['note']);
+    }
+
 
     private function checkAuthentication() {
         if(isset($_COOKIE['user']) and isset($_COOKIE['user_check']))

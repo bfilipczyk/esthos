@@ -13,6 +13,7 @@ Routing::get('events','DefaultController');
 Routing::get('items','DefaultController');
 Routing::get('places','DefaultController');
 Routing::get('scenarios','DefaultController');
+Routing::get('remove','DefaultController');
 
 Routing::post('add','DefaultController');
 Routing::post('search','DefaultController');

@@ -43,3 +43,13 @@ document.getElementById('save').onclick = function ()
 
 }
 
+document.getElementById('delete note').onclick = function ()
+{
+    if(confirm("Delete note"))
+    {
+        fetch('/remove').then(function (){
+            window.location.replace(window.location.origin + '/home');
+        })
+    }
+}
+
