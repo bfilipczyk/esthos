@@ -12,7 +12,7 @@
             <header>
                 Events
             </header>
-            <button> Add Event</button>
+            <button id="create"> Add Event</button>
         </div>
         <section id="base_main" class="base_main">
             <?php foreach ($notes as $note): ?>

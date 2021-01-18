@@ -3,6 +3,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/base_page.css">
     <script type="text/javascript" src="public/js/sidebar.js" defer></script>
+    <script type="text/javascript" src="public/js/create.js" defer></script>
     <title> CHARACTERS PAGE </title>
 </head>
 <body>
@@ -12,7 +13,7 @@
             <header>
                 Characters
             </header>
-            <button> Add Character</button>
+            <button name="create" id="create"> Add Character</button>
         </div>
         <section id="base_main" class="base_main">
             <?php foreach ($notes as $note): ?>

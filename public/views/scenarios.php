@@ -12,7 +12,7 @@
             <header>
                 Scenarios
             </header>
-            <button> Add Scenario</button>
+            <button id="create"> Add Scenario</button>
         </div>
         <section id="base_main" class="base_main">
             <?php foreach ($notes as $note): ?>

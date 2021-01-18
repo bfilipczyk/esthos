@@ -11,7 +11,7 @@ class Note
     private $last_open;
 
 
-    public function __construct($user_id, $title, $note_type, $content, $last_open, $id = null)
+    public function __construct($user_id, $note_type, $title, $content, $last_open, $id = null)
     {
         $this->id = $id;
         $this->user_id = $user_id;

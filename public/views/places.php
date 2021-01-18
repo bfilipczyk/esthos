@@ -12,7 +12,7 @@
             <header>
                 Places
             </header>
-            <button> Add Place</button>
+            <button id="create"> Add Place</button>
         </div>
         <section id="base_main" class="base_main">
             <?php foreach ($notes as $note): ?>

@@ -12,7 +12,7 @@
             <header>
                 Items
             </header>
-            <button> Add Item</button>
+            <button id="create"> Add Item</button>
         </div>
         <section id="base_main" class="base_main">
             <?php foreach ($notes as $note): ?>

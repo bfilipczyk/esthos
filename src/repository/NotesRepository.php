@@ -44,8 +44,8 @@ class NotesRepository extends Repository
         foreach ($notes as $note) {
             $result[] = new Note(
                 $note['user_id'],
-                $note['title'],
                 $note['note_type'],
+                $note['title'],
                 $note['content'],
                 $note['last_open'],
                 $note['id']
@@ -60,7 +60,7 @@ class NotesRepository extends Repository
 
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM notes WHERE note_type=? AND user_id=?;
+            SELECT * FROM notes WHERE note_type=? AND user_id=? ORDER BY title DESC ;
         ');
         $stmt->execute([
             $type,
@@ -71,8 +71,8 @@ class NotesRepository extends Repository
         foreach ($notes as $note) {
             $result[] = new Note(
                 $note['user_id'],
-                $note['title'],
                 $note['note_type'],
+                $note['title'],
                 $note['content'],
                 $note['last_open'],
                 $note['id']
@@ -87,7 +87,7 @@ class NotesRepository extends Repository
 
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM notes WHERE user_id=? ORDER BY last_open;
+            SELECT * FROM notes WHERE user_id=? ORDER BY last_open DESC;
         ');
         $stmt->execute([
             $user_id
@@ -97,13 +97,34 @@ class NotesRepository extends Repository
         foreach ($notes as $note) {
             $result[] = new Note(
                 $note['user_id'],
-                $note['title'],
                 $note['note_type'],
+                $note['title'],
                 $note['content'],
                 $note['last_open'],
                 $note['id']
             );
         }
         return $result;
+    }
+
+    public function getNewNote(int $user_id): ?Note {
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM notes WHERE user_id=? ORDER BY last_open DESC;
+        ');
+        $stmt->execute([
+            $user_id
+        ]);
+        $notes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($notes as $note) {
+            $result[] = new Note(
+                $note['user_id'],
+                $note['note_type'],
+                $note['title'],
+                $note['content'],
+                $note['last_open'],
+                $note['id']
+            );
+        }
+        return $result[0];
     }
 }

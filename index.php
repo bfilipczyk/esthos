@@ -13,6 +13,8 @@ Routing::get('events','DefaultController');
 Routing::get('items','DefaultController');
 Routing::get('places','DefaultController');
 Routing::get('scenarios','DefaultController');
+Routing::get('add','DefaultController');
+
 
 Routing::post('register','SecurityController');
 Routing::post('login','SecurityController');

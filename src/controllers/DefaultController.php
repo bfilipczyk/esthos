@@ -24,14 +24,14 @@ class DefaultController extends AppController {
     }
 
     public function notes() {
-
-        $note = $this->notesRepository->getNote(3);
+        $note = $this->notesRepository->getNote($_COOKIE['note']);
         if(!$this->isPost()) {
             return $this->render('notes', ['note' => $note]);
         }
         $note->setTitle($_POST['title']);
         $note->setContent($_POST['content']);
         $note->setLastOpen(Date('Y-m-d H:i:s'));
+
         $this->notesRepository->updateNote($note);
 
         $url = "http://$_SERVER[HTTP_HOST]";
@@ -70,6 +70,23 @@ class DefaultController extends AppController {
         $this->render('scenarios', ['notes' => $notes]);
     }
 
+    public function add() {
+        $this->checkAuthentication();
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+        if ($contentType === 'text/xml') {
+            $type = substr(trim(file_get_contents(("php://input"))),1);
+            $timeVar = Date('Y-m-d H:i:s');
+            $note = new Note($_COOKIE['user'],$type ,"name","description", $timeVar);
+            $this->notesRepository->addNote($note);
+
+
+            $note2 = $this->notesRepository->getNewNote($_COOKIE['user']);
+            setcookie("note",$note2->getId(),time()+86400,"/");
+
+
+        }
+    }
+
     private function checkAuthentication() {
         if(isset($_COOKIE['user']) and isset($_COOKIE['user_check']))
         {
@@ -78,6 +95,8 @@ class DefaultController extends AppController {
                 return null;
             }
         }
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/login");
     }
 
 
