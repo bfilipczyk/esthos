@@ -127,4 +127,21 @@ class NotesRepository extends Repository
         }
         return $result[0];
     }
+
+    public function getNotesByTitle(string $searchString, int $user_id) {
+
+        $searchString = substr($searchString,1,-1);
+        $searchString = '%' . strtolower($searchString) . '%';
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM notes WHERE user_id= :userId AND LOWER(title) LIKE :string 
+        ');
+        $stmt->bindParam(':string',$searchString,PDO::PARAM_STR);
+        $stmt->bindParam(':userId',$user_id,PDO::PARAM_INT);
+        $stmt->execute();
+        $notes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+        return $notes;
+
+    }
 }

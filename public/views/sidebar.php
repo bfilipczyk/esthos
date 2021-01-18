@@ -27,11 +27,7 @@
             <a href="/../scenarios" class="button">Scenarios</a>
         </li>
         <li>
-            <form>
-                <label>
-                    <input placeholder="search">
-                </label>
-            </form>
+            <input placeholder="search" id="Search">
         </li>
         <li>
             <a href="/../logout" class="button">Log out</a>

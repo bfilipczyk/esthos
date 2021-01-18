@@ -92,6 +92,21 @@ class DefaultController extends AppController {
         }
     }
 
+    public function search() {
+
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+
+            header('Content-type: application/json');
+            http_response_code(200);
+
+            $tmp = $this->notesRepository->getNotesByTitle($content, $_COOKIE['user']);
+            echo json_encode($tmp);
+        }
+
+    }
+
     private function checkAuthentication() {
         if(isset($_COOKIE['user']) and isset($_COOKIE['user_check']))
         {

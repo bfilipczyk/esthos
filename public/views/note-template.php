@@ -3,10 +3,10 @@
         <h2>
             title
         </h2>
-        <p class="info">
+        <p id="info" class="info">
             content
         </p>
-        <p class="last_opened">
+        <p id="last_opened" class="last_opened">
             null
         </p>
     </div>

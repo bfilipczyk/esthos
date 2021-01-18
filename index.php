@@ -13,7 +13,9 @@ Routing::get('events','DefaultController');
 Routing::get('items','DefaultController');
 Routing::get('places','DefaultController');
 Routing::get('scenarios','DefaultController');
+
 Routing::post('add','DefaultController');
+Routing::post('search','DefaultController');
 
 
 Routing::post('register','SecurityController');
