@@ -2,6 +2,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/base_page.css">
+    <link rel="stylesheet" type="text/css" href="public/css/note-div.css">
     <script type="text/javascript" src="public/js/sidebar.js" defer></script>
     <script type="text/javascript" src="public/js/manage-notes.js" defer></script>
     <script type="text/javascript" src="public/js/search.js" defer></script>

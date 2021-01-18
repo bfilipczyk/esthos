@@ -23,7 +23,7 @@ var tBodyConfig = {
         'help'
     ],
     toolbar: false,
-    quickbars_selection_toolbar: 'bold italic underline | formatselect | blockquote quicklink',
+    quickbars_selection_toolbar: 'bold italic underline',
     contextmenu: 'undo redo | inserttable | cell row column deletetable | help',
     powerpaste_word_import: 'clean',
     powerpaste_html_import: 'clean',
@@ -32,7 +32,7 @@ var tBodyConfig = {
 tinymce.init(tHeaderConfig);
 tinymce.init(tBodyConfig);
 
-document.getElementById('save').onclick = function ()
+document.getElementById('save').addEventListener("click", function ()
 {
     tinymce.triggerSave();
     $.ajax({
@@ -41,9 +41,9 @@ document.getElementById('save').onclick = function ()
         data: {'title': tinymce.editors[0].getContent(), 'content': tinymce.editors[0].getContent()}
     });
 
-}
+})
 
-document.getElementById('delete note').onclick = function ()
+document.getElementById('delete note').addEventListener("click", function ()
 {
     if(confirm("Delete note"))
     {
@@ -51,5 +51,5 @@ document.getElementById('delete note').onclick = function ()
             window.location.replace(window.location.origin + '/home');
         })
     }
-}
+})
 

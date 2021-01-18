@@ -34,7 +34,7 @@ class DefaultController extends AppController {
             return $this->render('notes', ['note' => $note]);
         }
         $note->setTitle($_POST['title']);
-        $note->setContent($_POST['delete']);
+        $note->setContent($_POST['content']);
         $note->setLastOpen(Date('Y-m-d H:i:s'));
 
         $this->notesRepository->updateNote($note);

@@ -7,6 +7,7 @@ main {
     overflow: auto;
 }
 
+
 section.base_main {
     width: 90%;
     display: grid;
@@ -16,6 +17,12 @@ section.base_main {
     overflow: visible;
 
 
+}
+p {
+    text-align: center;
+    overflow: hidden;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 main {
@@ -37,7 +44,11 @@ main::-webkit-scrollbar{
     justify-content: center;
     font:  normal normal normal 20px/30px Segoe UI;
 }
+.note{
+    height: 30vh;
+}
 section.base_main>div {
+    height: 30vh;
     color: #FFFFFF;
     background: #38383C 0 0 no-repeat padding-box;
     border-radius: 13px;
@@ -47,9 +58,7 @@ section.base_main>div {
     overflow: auto;
     justify-content: space-around;
 }
-.note{
-    height: 30vh;
-}
+
 section.base_main>div>h2 {
     text-align: center;
 }
