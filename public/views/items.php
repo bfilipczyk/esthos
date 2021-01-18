@@ -3,6 +3,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/base_page.css">
     <script type="text/javascript" src="public/js/sidebar.js" defer></script>
+    <script type="text/javascript" src="public/js/manage-notes.js" defer></script>
     <title> ITEMS PAGE </title>
 </head>
 <body>
@@ -16,7 +17,7 @@
         </div>
         <section id="base_main" class="base_main">
             <?php foreach ($notes as $note): ?>
-                <div id="<?= $note->getId(); ?>">
+                <div id="<?= $note->getId(); ?>" class="note_div">
                     <h2><?= $note->getTitle() ?></h2>
                     <p class="info"><?= $note->getContent() ?></p>
                     <p class="last_opened"><?= $note->getLastOpen() ?></p>

@@ -34,7 +34,7 @@
             </form>
         </li>
         <li>
-            <a href="#" class="button">settings</a>
+            <a href="/../logout" class="button">Log out</a>
         </li>
     </ul>
 </div>

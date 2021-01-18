@@ -24,6 +24,11 @@ class DefaultController extends AppController {
     }
 
     public function notes() {
+        $this->checkAuthentication();
+        if(!isset($_COOKIE['note'])){
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/home");
+        }
         $note = $this->notesRepository->getNote($_COOKIE['note']);
         if(!$this->isPost()) {
             return $this->render('notes', ['note' => $note]);

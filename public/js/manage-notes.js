@@ -1,3 +1,5 @@
+const divs = document.querySelectorAll(".note_div");
+
 document.getElementById("create").onclick = function () {
 
 
@@ -12,3 +14,13 @@ document.getElementById("create").onclick = function () {
 
     window.location.replace(window.location.origin+'/notes');
 }
+
+
+function move() {
+    var id = this.getAttribute("id")
+
+    document.cookie = "note="+id;
+    window.location.replace(window.location.origin+'/notes');
+}
+
+divs.forEach(div => div.addEventListener("click", move));
