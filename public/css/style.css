@@ -67,7 +67,14 @@ button {
         width: 100%;
     }
     form {
+        height: 40vh !important;
         margin: auto;
+    }
+    .login-input {
+        padding: 0.5em;
+    }
+    form.login>a{
+        width: auto !important;
     }
 }
 
