@@ -1,0 +1,123 @@
+
+main {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: auto;
+}
+
+
+section.base_main {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2em;
+    padding: 2em;
+    overflow: visible;
+
+
+}
+p {
+    text-align: center;
+    overflow: hidden;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+main {
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+}
+main::-webkit-scrollbar{
+    width: 0 !important;
+    display: none;
+}
+.base_top {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 3em;
+}
+.base_top>button {
+    position: center;
+    height: 30%;
+    justify-content: center;
+    font:  normal normal normal 20px/30px Segoe UI;
+}
+.note{
+    height: 30vh;
+}
+section.base_main>div {
+    height: 30vh;
+    color: #FFFFFF;
+    background: #38383C 0 0 no-repeat padding-box;
+    border-radius: 13px;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    justify-content: space-around;
+}
+
+section.base_main>div>h2 {
+    text-align: center;
+}
+section.base_main>div>.info {
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 75ch;
+    padding: 0 1em;
+}
+section.base_main>div>.last_opened {
+    text-align: right;
+    position: relative;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+
+.navi {
+    width: 20vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background: #363537FA 0 0 no-repeat padding-box;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    justify-content: center;
+}
+
+.navi img{
+    width: 60%;
+    margin: 2em auto;
+}
+
+.nav_open {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    top: 50%;
+    right: 0;
+
+}
+.navi>button {
+    position: center;
+    height: 30%;
+    justify-content: center;
+    font:  normal normal normal 20px/30px Segoe UI;
+}
+
+@media only screen and (max-device-width: 420px) {
+    section.base_main {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .navi {
+        width: 80%;
+
+    }
+
+}

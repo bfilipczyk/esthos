@@ -1,0 +1,146 @@
+html {
+    background: url("../img/bg.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.container {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+.logo-login {
+    width: 50%;
+    text-align: center;
+}
+.login-container {
+    width: 50%;
+
+}
+form.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 45%;
+    height: 30vh;
+
+    background: #2C2929FA 0 0 no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 20px;
+    opacity: 1;
+
+}
+form.login>div {
+    color: #D1BFBF;
+}
+form.login>a {
+    margin-top: 1em;
+    width: 20%;
+}
+
+
+
+button {
+    color: #D1BFBF;
+    background: #404651 0 0 no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 18px;
+    opacity: 1;
+}
+@media only screen and (max-device-width: 420px) {
+    .container {
+        flex-direction: column;
+    }
+
+    * {
+        font-size: 36px
+    }
+    .login-container, .logo-login {
+        width: 100%;
+    }
+    form {
+        margin: auto;
+    }
+}
+
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    line-height: 2em;
+}
+li i {
+    font-size: 1.5em;
+}
+.button {
+    color: #D1BFBF;
+    background: #404651 0 0 no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 18px;
+    opacity: 1;
+    text-align: center;
+    letter-spacing: -.7px;
+    width: 100%;
+}
+ul {
+    list-style-type: none;
+    font: normal normal normal 20px/30px Segoe UI;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+}
+li {
+    text-align: left;
+    margin-bottom: 1em;
+}
+.close_sidebar {
+    justify-content: center;
+}
+li:last-child{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    padding: 1em 2em;
+    background: #38383CFA 0 0 no-repeat padding-box;
+    border-radius: 24px;
+    width: 30%;
+    opacity: 1;
+    text-align: right;
+    font: normal normal bold 44px/26px Arial;
+    letter-spacing: 0;
+    color: #D1BFBF;
+
+}
+
+.no-valid {
+    border: 3px solid red !important;
+    border-radius: 1em !important;
+    box-shadow: 0 0 0.2em red !important;
+    outline: none !important;
+}
+.login-input {
+    box-sizing: border-box;
+    color: #D1BFBF;
+    width: 80%;
+    margin: 1em;
+    padding: 1em;
+    border: none;
+    background-color: transparent;
+    opacity: 1;
+    border-bottom: 1px solid #707070;
+
+}
