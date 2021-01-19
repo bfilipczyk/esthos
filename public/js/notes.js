@@ -4,7 +4,10 @@ var tHeaderConfig = {
     menubar: false,
     skin: 'oxide-dark',
     content_css: 'dark',
-    toolbar: false
+    toolbar: false,
+    mobile: {
+        width: "55vw"
+    }
 };
 
 var tBodyConfig = {
@@ -27,6 +30,9 @@ var tBodyConfig = {
     contextmenu: 'undo redo | inserttable | cell row column deletetable | help',
     powerpaste_word_import: 'clean',
     powerpaste_html_import: 'clean',
+    mobile: {
+        width:"55vw"
+    }
 };
 
 tinymce.init(tHeaderConfig);
