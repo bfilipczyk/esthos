@@ -42,7 +42,7 @@ class NotesRepository extends Repository
     public function getNote(int $id): ?Note
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM notes WHERE id=? GROUP BY id;
+            SELECT * FROM notes WHERE id=?;
         ');
         $stmt->execute([
             $id
@@ -114,13 +114,13 @@ class NotesRepository extends Repository
         return $result;
     }
 
-    public function getNewNote(int $user_id): ?Note {
+    public function getNewNote(int $user_id): int {
+
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM notes WHERE user_id=? ORDER BY last_open DESC;
+            SELECT * FROM notes WHERE user_id= :userId ORDER BY id DESC 
         ');
-        $stmt->execute([
-            $user_id
-        ]);
+        $stmt->bindParam(':userId',$user_id,PDO::PARAM_INT);
+        $stmt->execute();
         $notes = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($notes as $note) {
             $result[] = new Note(
@@ -132,7 +132,9 @@ class NotesRepository extends Repository
                 $note['id']
             );
         }
-        return $result[0];
+        $tmp = $result[0]->getId();
+        setcookie("test3",$tmp,time()+86400,"/");
+        return $tmp;
     }
 
     public function getNotesByTitle(string $searchString, int $user_id) {

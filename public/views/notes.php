@@ -9,6 +9,7 @@
     <script src="jquery-3.5.1.min.js" defer></script>
 
     <script type="text/javascript" src="public/js/notes.js" defer></script>
+    <script type="text/javascript" src="public/js/search.js" defer></script>
 
     <title> NOTE PAGE </title>
 </head>

@@ -20,7 +20,7 @@ class DefaultController extends AppController {
     public function home() {
         $this->checkAuthentication();
         $notes = $this->notesRepository->getNotes($_COOKIE['user']);
-        $this->render('home', ['notes' => $notes]);
+        $this->render('home', ['notes' => $notes, 'title' => 'HOME PAGE', 'header' => 'Recently Open']);
     }
 
     public function notes() {
@@ -49,45 +49,56 @@ class DefaultController extends AppController {
     public function characters() {
         $this->checkAuthentication();
         $notes = $this->notesRepository->getNotesByType("characters",$_COOKIE['user']);
-        $this->render('characters', ['notes' => $notes]);
+        $this->render('home', ['notes' => $notes, 'title' => 'CHARACTERS PAGE', 'header' => 'Characters',
+            'button' => 'Add Character']);
     }
 
     public function events() {
         $this->checkAuthentication();
         $notes = $this->notesRepository->getNotesByType("events",$_COOKIE['user']);
-        $this->render('events', ['notes' => $notes]);
+        $this->render('home', ['notes' => $notes, 'title' => 'EVENTS PAGE', 'header' => 'Events',
+            'button' => 'Add Event']);
     }
 
     public function items() {
         $this->checkAuthentication();
         $notes = $this->notesRepository->getNotesByType("items",$_COOKIE['user']);
-        $this->render('items', ['notes' => $notes]);
+        $this->render('home', ['notes' => $notes, 'title' => 'ITEMS PAGE', 'header' => 'Items',
+            'button' => 'Add Item']);
     }
 
     public function places() {
         $this->checkAuthentication();
         $notes = $this->notesRepository->getNotesByType("places",$_COOKIE['user']);
-        $this->render('places', ['notes' => $notes]);
+        $this->render('home', ['notes' => $notes, 'title' => 'PLACES PAGE', 'header' => 'Places',
+            'button' => 'Add Place']);
     }
 
     public function scenarios() {
         $this->checkAuthentication();
         $notes = $this->notesRepository->getNotesByType("scenarios",$_COOKIE['user']);
-        $this->render('scenarios', ['notes' => $notes]);
+        $this->render('home', ['notes' => $notes, 'title' => 'SCENARIOS PAGE', 'header' => 'Scenarios',
+            'button' => 'Add Scenario   ']);
     }
 
     public function add() {
+        ;
+
+
         $this->checkAuthentication();
         $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+
         if ($contentType === 'text/xml') {
+
             $type = substr(trim(file_get_contents(("php://input"))),1);
+
             $timeVar = Date('Y-m-d H:i:s');
             $note = new Note($_COOKIE['user'],$type ,"name","description", $timeVar);
+
             $this->notesRepository->addNote($note);
 
-
-            $note2 = $this->notesRepository->getNewNote($_COOKIE['user']);
-            setcookie("note",$note2->getId(),time()+86400,"/");
+            $id = $this->notesRepository->getNewNote($_COOKIE['user']);
+            setcookie("note",$id,time()+86400,"/");
 
 
         }
@@ -98,7 +109,6 @@ class DefaultController extends AppController {
         $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
         if ($contentType === "application/json") {
             $content = trim(file_get_contents("php://input"));
-
             header('Content-type: application/json');
             http_response_code(200);
 

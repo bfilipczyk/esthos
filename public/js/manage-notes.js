@@ -11,18 +11,15 @@ if(document.getElementById('create')) {
                 },
                 body: window.location.pathname
             }
-        );
-
-        window.location.replace(window.location.origin + '/notes');
+        ).then(function (){
+            window.location.replace(window.location.origin + '/notes');
+        })
     })
 }
 
-
-function move() {
+divs.forEach(div => div.addEventListener("click", function (){
     var id = this.getAttribute("id")
 
     document.cookie = "note="+id;
     window.location.replace(window.location.origin+'/notes');
-}
-
-divs.forEach(div => div.addEventListener("click", move));
+}));
